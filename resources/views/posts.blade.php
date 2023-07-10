@@ -1,23 +1,21 @@
-<!DOCTYPE html>
+@extends('layout')
 
-<script src="/js/main.js"></script>
-<link rel="stylesheet" href="/css/main.css">
-<title>Hello</title>
+@section('title')
+    All Posts
+@endsection
 
-<body>
-
-    <?php foreach ($posts as $post) : ?>
+@section('content')
+    @foreach ($posts as $post)
         <article>
             <h1>
-                <a href="posts/<?= $post->slug ?>">
-                    <?= $post->title ?>
+                <a href="posts/{{ $post->slug }}">
+                    {{$post->title}}
                 </a>
             </h1>
 
-            <div>
-                <?= $post->excerpt ?>
+            <div style="{{$loop-> even ? 'color: yellow' : ''}}">
+                {{$post->excerpt}}
             </div>
         </article>
-    <?php endforeach; ?>
-
-</body>
+    @endforeach
+@endsection

@@ -1,24 +1,23 @@
-<!DOCTYPE html>
+@extends('layout')
 
+@section('title')
+    {{ $post->title; }}
+@endsection
 
-<script src="/js/main.js"></script>
-<link rel="stylesheet" href="/css/main.css">
-<title>Hello</title>
-
-<body>
-
+@section('content')
     <article>
-        <h1> <?= $post->title; ?> </h1>
+        <h1> {{ $post->title; }}  </h1>
 
         <div>
-            <?= $post->body; ?>
+            {{-- text with these exclamations is not being escaped, but is handled as html--}}
+            {!! $post->body; !!}
         </div>
 
     </article>
 
     <button onclick="window.location.href = '/';"> Go back to mainpage </button>
+@endsection
 
-</body>
 
 
 
