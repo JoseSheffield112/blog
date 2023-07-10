@@ -18,12 +18,11 @@ Route::get('/', function () {
     return view('posts', [
         'posts' => Post::all()
     ]);
-
 });
 
-Route::get('/posts/{post}', function ($slug) {
-    // Find a post by its slug and pass that to view 'post'
-    return view('/post', [
-        'post' => Post::find($slug)
-    ]);
-})->where('post', '[A-z_\-]+');
+Route::get('/post/{post}', function ($slug) {
+    $post = Post::findOrFail($slug);
+    return ($post) ? view('/post', [
+        'post' => $post
+    ]) : Redirect::to('/');
+});
