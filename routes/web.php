@@ -13,11 +13,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('posts', [
-        'posts' => Post::all()
-    ]);
+Route::get('/temp', function(){
+    return view('temp');
 });
 
 Route::get('/post/{post}', function ($slug) {
@@ -25,4 +22,10 @@ Route::get('/post/{post}', function ($slug) {
     return ($post) ? view('/post', [
         'post' => $post
     ]) : Redirect::to('/');
+});
+
+Route::get('/', function () {
+    return view('posts', [
+        'posts' => Post::all()
+    ]);
 });
