@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Redirect;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 class Post
