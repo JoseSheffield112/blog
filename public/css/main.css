@@ -6,6 +6,10 @@ body{
     font-family: "Ubuntu Light";
 }
 
+a {
+    text-decoration: none;
+}
+
 p {
     line-height: 2;
 }

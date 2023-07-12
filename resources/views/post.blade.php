@@ -9,15 +9,16 @@
         <h1> {{ $post->title; }}  </h1>
 
         <div>
-            {{-- text with these exclamations is not being escaped, but is handled as html--}}
+            {{-- text with these exclamations is not being escaped - only use if you are in contorl of the data --}}
             {!! $post->body; !!}
         </div>
 
     </article>
 
-    <button onclick="window.location.href = '/';"> Go back to mainpage </button>
-@endsection
+    <br>
 
+    <button onclick="window.location.href = '/';"> Mainpage </button>
+@endsection
 
 
 
