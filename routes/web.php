@@ -15,9 +15,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*
+ * Debugging for SQL queries
+ *
+ *     \Illuminate\Support\Facades\DB::listen(function ($query){
+ *       logger($query ->sql, $query->bindings);
+ *   });
+ *
+ */
+
 Route::get('/', function () {
     return view('posts', [
-        'posts' => Post::all()
+        'posts' => Post::with('category')->get()
     ]);
 });
 
