@@ -14,7 +14,9 @@
             </h1>
 
             <p>
-                <a href="/categories/{{ $post->category->slug }}"> {{ $post->category->name; }} </a>
+                Category : <a href="/categories/{{ $post->category->slug }}"> {{ $post->category->name; }} </a>
+                <br>
+                User : {{ $post->user->name}}
             </p>
 
             <div style="{{$loop-> even ? 'color: yellow' : ''}}">
