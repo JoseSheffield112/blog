@@ -1,11 +1,11 @@
 @extends('layout')
 
 @section('title')
-    {{ $author->name }}
+    {{ $posts->author->name }}
 @endsection
 
 @section('content')
-    @foreach($author->posts as $post)
+    @foreach($posts as $post)
 
         <article>
 

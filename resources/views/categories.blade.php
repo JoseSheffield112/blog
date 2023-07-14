@@ -1,13 +1,13 @@
 @extends('layout')
 
 @section('title')
-    {{ $category->name }}
+    {{ $posts->category->name }}
 @endsection
 
 @section('content')
-    <h1>{{ $category->name }}</h1>
+    <h1>{{ $posts->category->name }}</h1>
 
-    @foreach($category->posts->sortByDesc('id') as $post)
+    @foreach($posts as $post) {{--->sortByDesc('id')--}}
         <article>
             <h2><a href="/post/{{ $post->slug }}">{{ $post->title }}</a></h2>
 
