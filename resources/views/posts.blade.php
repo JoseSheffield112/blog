@@ -14,7 +14,7 @@
             </h1>
 
             <p>
-                Category : <a href="/categories/{{ $post->category->id }}"> {{ $post->category->name; }} </a>
+                Category : <a href="/categories/{{ $post->category->slug }}"> {{ $post->category->name; }} </a>
                 <br>
                 User : {{ $post->user->name}}
             </p>

@@ -9,7 +9,7 @@
         <h1> {{ $post->title; }}  </h1>
 
         <p>
-            <a href="/categories/{{ $post->category->id }}"> {{ $post->category->name; }} </a>
+            <a href="/categories/{{ $post->category->slug }}"> {{ $post->category->name; }} </a>
         </p>
 
         <p>This was a post from <a href="#">{{ $post->user->name}}</a>.</p>
