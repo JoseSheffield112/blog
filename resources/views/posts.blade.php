@@ -16,7 +16,7 @@
             <p>
                 Category : <a href="/categories/{{ $post->category->slug }}"> {{ $post->category->name; }} </a>
                 <br>
-                User : {{ $post->user->name}}
+                By : <a href="/authors/{{ $post->author->username }}">{{ $post->author->name}}</a>
             </p>
 
             <div style="{{$loop-> even ? 'color: yellow' : ''}}">

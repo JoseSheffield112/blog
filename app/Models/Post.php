@@ -18,7 +18,7 @@ class Post extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function user(){
-        return $this->belongsTo(User::class);
+    public function author(){ // uses function name to search db column
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

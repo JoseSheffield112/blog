@@ -9,10 +9,8 @@
         <h1> {{ $post->title; }}  </h1>
 
         <p>
-            <a href="/categories/{{ $post->category->slug }}"> {{ $post->category->name; }} </a>
+            By : <a href="/authors/{{ $post->author->username }}">{{ $post->author->name}}</a>
         </p>
-
-        <p>This was a post from <a href="#">{{ $post->user->name}}</a>.</p>
 
         <div>
             {{-- text with these exclamations is not being escaped - only use if you are in contorl of the data --}}

@@ -21,11 +21,20 @@ class DatabaseSeeder extends Seeder
         Post::factory(3)->create();
 
         // with dependencies
+
+        // multiple posts from a user
         $user = User::factory()->create([
             'name' => 'Jose'
         ]);
-        Post::factory()->create([
+        Post::factory(3)->create([
             'user_id' => $user->id
+        ]);
+
+        // multiple posts with the same category
+        $category = Category::factory()->create();
+
+        Post::factory(4)->create([
+            'category_id' => $category->id
         ]);
 
     }
