@@ -6,7 +6,8 @@
 
 @section('content')
     <h1>{{ $category->name }}</h1>
-    @foreach($category->posts as $post)
+
+    @foreach($category->posts->sortByDesc('id') as $post)
 
         <h2><a href="/post/{{ $post->slug }}">{{ $post->title }}</a></h2>
 
