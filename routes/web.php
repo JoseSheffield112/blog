@@ -20,9 +20,9 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/post/{post}', function ($id) {
-    $post = Post::findOrFail($id);
-    return ($post) ? view('/post', [
+// using route model binding to get post
+Route::get('/post/{post:slug}', function (Post $post) {
+    return view('/post', [
         'post' => $post
-    ]) : Redirect::to('/');
+    ]);
 });
