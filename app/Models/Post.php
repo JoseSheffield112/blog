@@ -13,6 +13,10 @@ class Post extends Model
     // Mass assignment of Post fields (mass assignment vulnerability)
     protected $fillable = ['title', 'excerpt', 'body', 'slug', 'category_id'];
 
+    // Eager loading ['author', 'category'] by default
+    // use without() when not needed!
+    protected $with = ['author', 'category'];
+
     public function category()
     {
         return $this->belongsTo(Category::class);
