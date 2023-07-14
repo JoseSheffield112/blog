@@ -4,6 +4,8 @@ body{
     max-width: 600px;
     margin: auto;
     font-family: "Ubuntu Light";
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 a {
