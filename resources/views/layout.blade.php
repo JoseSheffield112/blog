@@ -6,4 +6,9 @@
 
 <body>
     @yield('content')
+
+
+    <br>
+
+    <button onclick="window.location.href = '/';"> Mainpage </button>
 </body>

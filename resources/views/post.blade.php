@@ -20,10 +20,6 @@
         </div>
 
     </article>
-
-    <br>
-
-    <button onclick="window.location.href = '/';"> Mainpage </button>
 @endsection
 
 
