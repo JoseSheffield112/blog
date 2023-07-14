@@ -12,6 +12,8 @@
             <a href="/categories/{{ $post->category->slug }}"> {{ $post->category->name; }} </a>
         </p>
 
+        <p>This was a post from <a href="#">{{ $post->user->name}}</a>.</p>
+
         <div>
             {{-- text with these exclamations is not being escaped - only use if you are in contorl of the data --}}
             {!! $post->body; !!}
