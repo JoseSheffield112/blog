@@ -15,7 +15,7 @@ class Post extends Model
 
     // Eager loading ['author', 'category'] by default
     // use without() when not needed!
-    protected $with = ['author', 'category'];
+    // protected $with = ['author', 'category'];
 
     public function category()
     {

@@ -40,13 +40,13 @@ Route::get('/post/{post:slug}', function (Post $post) {
 
 Route::get('/categories/{category:slug}', function (Category $category) {
     return view('posts', [
-        'posts' => $category->posts()->latest()->get()
+        'posts' => $category->posts()->with(['author', 'category'])->latest()->get()
     ]);
 });
 
 Route::get('authors/{author:username}', function (User $author) {
     return view('posts', [
-        'posts' => $author->posts()->latest()->get()
+        'posts' => $author->posts()->with(['author', 'category'])->latest()->get()
     ]);
 });
 
