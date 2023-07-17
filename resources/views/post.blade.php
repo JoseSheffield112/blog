@@ -1,4 +1,7 @@
 <x-layout>
+    @slot('title')
+        {{ $post->title }}
+    @endslot
     <article>
         <h1> {{ $post->title }}  </h1>
 

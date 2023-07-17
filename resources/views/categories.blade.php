@@ -1,8 +1,8 @@
 <x-layout>
-    <x-layout name="title">
-        {{ $posts->category->name }}
-    </x-layout>
-    <h1>{{ $posts->category->name }}</h1>
+    @slot('title')
+        {{ $posts->first()->category->name }}
+    @endslot
+    <h1>{{ $posts->first()->category->name }}</h1>
 
     @foreach($posts as $post)
         <article>

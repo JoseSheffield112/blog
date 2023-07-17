@@ -1,7 +1,7 @@
 <x-layout>
-    <x-layout name="title">
-        {{ $posts->author->name }}
-    </x-layout>
+    @slot('title')
+        {{ $posts->first()->author->name }}
+    @endslot
 
     @foreach($posts as $post)
 
