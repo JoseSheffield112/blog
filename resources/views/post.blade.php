@@ -1,8 +1,4 @@
 <x-layout>
-    <x-slot name="title">
-        {{ $post->title }}
-    </x-slot>
-
     <article>
         <h1> {{ $post->title }}  </h1>
 
