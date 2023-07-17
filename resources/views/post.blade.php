@@ -11,7 +11,7 @@
                     <img src="/images/illustration-1.png" alt="" class="rounded-xl">
 
                     <p class="mt-4 block text-gray-400 text-xs">
-                        Published <time> {{ $post->created_at->diffForHumans() }} </time>
+                        <x-publish-date :date="$post->created_at"/>
                     </p>
 
                     <div class="flex items-center lg:justify-center text-sm mt-4">
