@@ -1,12 +1,10 @@
-@extends('layout')
+<x-layout>
+    <x-slot name="title">
+        {{ $post->title }}
+    </x-slot>
 
-@section('title')
-    {{ $post->title; }}
-@endsection
-
-@section('content')
     <article>
-        <h1> {{ $post->title; }}  </h1>
+        <h1> {{ $post->title }}  </h1>
 
         <p>
             By : <a href="/authors/{{ $post->author->username }}">{{ $post->author->name}}</a>
@@ -18,7 +16,7 @@
         </div>
 
     </article>
-@endsection
+</x-layout>
 
 
 

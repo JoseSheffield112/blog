@@ -1,10 +1,8 @@
-@extends('layout')
+<x-layout>
+    <x-layout name="title">
+        {{ $posts->author->name }}
+    </x-layout>
 
-@section('title')
-    {{ $posts->author->name }}
-@endsection
-
-@section('content')
     @foreach($posts as $post)
 
         <article>
@@ -28,4 +26,4 @@
         </article>
 
     @endforeach
-@endsection
+</x-layout>

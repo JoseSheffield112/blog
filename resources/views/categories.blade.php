@@ -1,10 +1,7 @@
-@extends('layout')
-
-@section('title')
-    {{ $posts->category->name }}
-@endsection
-
-@section('content')
+<x-layout>
+    <x-layout name="title">
+        {{ $posts->category->name }}
+    </x-layout>
     <h1>{{ $posts->category->name }}</h1>
 
     @foreach($posts as $post)
@@ -16,4 +13,4 @@
             <br>
         </article>
     @endforeach
-@endsection
+</x-layout>

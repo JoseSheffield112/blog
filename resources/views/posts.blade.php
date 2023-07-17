@@ -1,10 +1,9 @@
-@extends('layout')
+<x-layout>
+    <x-slot name="title">
+        All posts
+    </x-slot>
 
-@section('title')
-    All Posts
-@endsection
-
-@section('content')
+    {{-- default slot --}}
     @foreach ($posts as $post)
         <article>
             <h1>
@@ -24,4 +23,4 @@
             </div>
         </article>
     @endforeach
-@endsection
+</x-layout>
