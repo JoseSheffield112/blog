@@ -27,26 +27,43 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('posts', [
-        'posts' => Post::latest()->get()
+        'posts' => Post::latest()->get(),
+        'categories' => Category::all()
     ]);
 });
 
 // using route model binding to get post
 Route::get('/post/{post:slug}', function (Post $post) {
     return view('/post', [
-        'post' => $post
+        'post' => $post,
+        Category::all()
     ]);
 });
 
-Route::get('/categories/{category:slug}', function (Category $category) {
-    return view('categories', [
-        'posts' => $category->posts()->with(['author', 'category'])->latest()->get()
+Route::get('categories/{category:slug}', function (Category $category) {
+    return view('posts', [
+        'posts' => $category->posts(),
+        'currentCategory' => $category,
+        'categories' => Category::all()
     ]);
 });
 
 Route::get('authors/{author:username}', function (User $author) {
-    return view('author', [
-        'posts' => $author->posts()->with(['author', 'category'])->latest()->get()
+    return view('posts', [
+        'posts' => $author->posts(),
+        'categories' => Category::all()
     ]);
 });
+
+//Route::get('/categories/{category:slug}', function (Category $category) {
+//    return view('categories', [
+//        'posts' => $category->posts()->with(['author', 'category'])->latest()->get()
+//    ]);
+//});
+//
+//Route::get('authors/{author:username}', function (User $author) {
+//    return view('author', [
+//        'posts' => $author->posts()->with(['author', 'category'])->latest()->get()
+//    ]);
+//});
 
