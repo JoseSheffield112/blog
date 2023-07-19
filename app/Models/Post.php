@@ -13,6 +13,13 @@ class Post extends Model
     // Mass assignment of Post fields (mass assignment vulnerability)
     protected $fillable = ['title', 'excerpt', 'body', 'slug', 'category_id'];
 
+    public function scopeFilter($query, array $filters){ //$query passed automatically by laravel
+        $query->when($filters['search'] ?? false, function($query, $search) {
+            $query->where('title', 'like', '%' . $search . '%')
+                ->orWhere('body', 'like', '%' . $search . '%');
+        });
+    }
+
     // Eager loading ['author', 'category'] by default
     // use without() when not needed!
     // protected $with = ['author', 'category'];
