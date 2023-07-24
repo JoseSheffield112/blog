@@ -29,14 +29,6 @@ use App\Http\Controllers\PostController;
 Route::get('/', [PostController::class, 'index'])->name('home');
 
 // using route model binding to get post
-Route::get('/posts/{post:slug}', [PostController::class, 'show']);
-
-
-Route::get('authors/{author:username}', function (User $author) {
-    return view('posts', [
-        'posts' => $author->posts(),
-        'currentCategory' => Category::firstWhere('slug', request('category'))
-    ]);
-});
+Route::get('/post/{post:slug}', [PostController::class, 'show']);
 
 
