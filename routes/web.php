@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RegisterController;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\User;
@@ -30,5 +31,8 @@ Route::get('/', [PostController::class, 'index'])->name('home');
 
 // using route model binding to get post
 Route::get('/post/{post:slug}', [PostController::class, 'show']);
+
+// registration
+Route::get('register', [RegisterController::class, 'create']);
 
 
