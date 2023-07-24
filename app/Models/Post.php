@@ -14,10 +14,13 @@ class Post extends Model
     protected $fillable = ['title', 'excerpt', 'body', 'slug', 'category_id'];
 
     public function scopeFilter($query, array $filters){ //$query passed automatically by laravel
-        $query->when($filters['search'] ?? false, function($query, $search) {
-            $query->where('title', 'like', '%' . $search . '%')
-                ->orWhere('body', 'like', '%' . $search . '%');
-        });
+
+        $query->when($filters['search'] ?? false, fn($query, $search) =>
+            $query->where(fn($query) =>
+                $query->where('title', 'like', '%' . $search . '%')
+                ->orWhere('body', 'like', '%' . $search . '%')
+            )
+        );
 
         $query->when($filters['category'] ?? false, fn ($query, $category) =>
             $query->whereHas('category', fn ($query) =>

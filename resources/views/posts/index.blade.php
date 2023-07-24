@@ -9,6 +9,8 @@
 
         @if($posts->count())
             <x-posts-grid :posts="$posts"/>
+
+            {{ $posts->links() }}
         @else
             <p clas="text-center">
                 There are no posts! Please check back later.
