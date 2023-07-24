@@ -41,8 +41,19 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'password' => 'hashed',
+        'password' => 'hashed', // to check the value of a hash : Illuminate\Support\Facades\Hash::check('string-you-have', {the-hash});
     ];
+
+    // Eloquent mutator to hash password
+
+    public function setPasswordAttribute($password){
+        $this->attributes['password'] = bcrypt($password);
+    }
+
+    // eloquent accessor to upper case names
+    public function getNameAttribute($name){
+        return ucwords($name);
+    }
 
     /**
      * Eloquent function to get posts
