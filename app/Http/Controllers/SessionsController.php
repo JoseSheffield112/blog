@@ -11,22 +11,24 @@ class SessionsController extends Controller
     }
 
     public function store(){
-        // stopping session fixation
-        session()->regenerate();
 
         // authorise
         $attributes = request()->validate([
             'email' => ['required', 'email'],
             'password' => 'required'
         ]);
-        // login
-        if(auth()->attempt($attributes)){
-            return redirect('/')->with('success', 'Welcome back!');
+
+        // attempt login
+        if(! auth()->attempt($attributes)){
+            throw ValidationException::withMessages([
+                'email' => 'This email couldn\'t be verified'
+            ]);
         }
-        // redirect
-        throw ValidationException::withMessages([
-            'email' => 'This email couldn\'t be verified'
-        ]);
+
+        // preventing session fixation
+        session()->regenerate();
+
+        return redirect('/')->with('success', 'Welcome back!');
     }
 
     public function destroy(){
