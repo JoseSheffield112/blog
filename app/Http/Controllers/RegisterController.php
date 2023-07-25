@@ -22,7 +22,9 @@ class RegisterController extends Controller
            'email' => ['required', 'email', 'max:255', Rule::unique('users', 'email')],
         ]);
 
-        User::create($attributes);
+        $user = User::create($attributes);
+
+        auth()->login($user);
 
         return redirect('/')->with('success', 'Your account has successfully been created!');
     }
