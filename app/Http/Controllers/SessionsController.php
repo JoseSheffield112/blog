@@ -11,6 +11,9 @@ class SessionsController extends Controller
     }
 
     public function store(){
+        // stopping session fixation
+        session()->regenerate();
+
         // authorise
         $attributes = request()->validate([
             'email' => ['required', 'email'],
