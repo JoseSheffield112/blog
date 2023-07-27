@@ -52,6 +52,14 @@
                         {!! $post->body !!}
                     </div>
                 </div>
+
+                <!-- Comment Section -->
+                <section class="col-span-8 col-start-2 mt-10 space-y-6">
+                    <x-post-comment />
+                    <x-post-comment />
+                    <x-post-comment />
+                    <x-post-comment />
+                </section>
             </article>
         </main>
     </section>
