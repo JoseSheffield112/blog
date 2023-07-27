@@ -55,22 +55,24 @@
 
                 <!-- Comment Section -->
                 <section class="col-span-10 col-start-2 mt-10 space-y-6">
-                    <form method="POST" action="#" class="border border-gray-200 p-6 rounded">
-                        @csrf
-                        <header class="flex items-center">
-                            <img src="https://i.pravatar.cc/60?u={{ auth()->id() }}" alt="" width="40" height="40" class="rounded-full">
+                    <x-panel>
+                        <form method="POST" action="#" >
+                            @csrf
+                            <header class="flex items-center">
+                                <img src="https://i.pravatar.cc/60?u={{ auth()->id() }}" alt="" width="40" height="40" class="rounded-full">
 
-                            <h2 class="ml-4"> Wanna leave a comment?</h2>
-                        </header>
+                                <h2 class="ml-4"> Wanna leave a comment?</h2>
+                            </header>
 
-                        <div class="mt-6" style="border: 4mm ridge rgba(0, 191, 255, .6); ">
-                            <textarea name="body" class="w-full text-sm focus:outline-none focus-ring" rows="5" placeholder="Here is where you type" style="resize: none"></textarea>
-                        </div>
+                            <div class="mt-6" style="border: 4mm ridge rgba(0, 191, 255, .6); ">
+                                <textarea name="body" class="w-full text-sm focus:outline-none focus-ring" rows="5" placeholder="Here is where you type" style="resize: none"></textarea>
+                            </div>
 
-                        <div class="flex justify-end mt-10 border-t border-gray=200 pt-6">
-                            <button type="submit" class="bg-blue-500 text-white uppercase font-semibold text-xs py-2 px-10 rounded-2xl hover:bg-blue-600">Post</button>
-                        </div>
-                    </form>
+                            <div class="flex justify-end mt-10 border-t border-gray=200 pt-6">
+                                <button type="submit" class="bg-blue-500 text-white uppercase font-semibold text-xs py-2 px-10 rounded-2xl hover:bg-blue-600">Post</button>
+                            </div>
+                        </form>
+                    </x-panel>
 
                     @foreach($post->comments as $comment)
                         <x-post-comment :comment="$comment"/>
