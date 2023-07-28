@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PostCommentsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
@@ -33,8 +34,13 @@ Route::get('/', [PostController::class, 'index'])->name('home');
 
 // using route model binding to get post
 Route::get('post/{post:slug}', [PostController::class, 'show']);
-// posts
+// posting comments
 Route::post('post/{post:slug}/comments', [PostCommentsController::class, 'store'])->middleware('auth');
+
+
+//signing up for a newsletter
+Route::post('newsletter', NewsletterController::class);
+
 
 // registration
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
