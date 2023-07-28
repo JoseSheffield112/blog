@@ -16,7 +16,7 @@
                 @enderror
             </div>
 
-            <x-primary-button :attributes="bg-blue-500">Post</x-primary-button>
+            <x-primary-button>Post</x-primary-button>
         </form>
     </x-panel>
 @else
