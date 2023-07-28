@@ -11,7 +11,7 @@
                 <h3 class="font-bold">{{$comment->author->name}}</h3>
 
                 <p class="text-cs">
-                    Posted <time>{{ $comment->posted_at }}</time>
+                    Posted <time>{{ $comment->created_at->format("jS F, Y, g:i a") }}</time>
                 </p>
             </header>
             <p>
