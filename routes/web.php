@@ -34,14 +34,14 @@ Route::get('/', [PostController::class, 'index'])->name('home');
 // using route model binding to get post
 Route::get('post/{post:slug}', [PostController::class, 'show']);
 // posts
-Route::post('post/{post:slug}/comments', [PostCommentsController::class, 'store']);
+Route::post('post/{post:slug}/comments', [PostCommentsController::class, 'store'])->middleware('auth');
 
 // registration
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
 
 //login
-Route::get('login', [SessionsController::class, 'create'])->middleware('guest');
+Route::get('login', [SessionsController::class, 'create'])->middleware('guest')->name('login');
 Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
