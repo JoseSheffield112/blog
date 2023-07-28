@@ -76,7 +76,7 @@
                         </x-panel>
                     @else
                         <p> please login to post a comment</p>
-                    @endif
+                    @endauth
 
                     @foreach($post->comments as $comment)
                         <x-post-comment :comment="$comment"/>
