@@ -11,7 +11,7 @@ class Post extends Model
     use HasFactory;
 
     // Mass assignment of Post fields (mass assignment vulnerability)
-    protected $fillable = ['title', 'excerpt', 'body', 'slug', 'category_id'];
+    protected $fillable = ['title', 'excerpt', 'body', 'slug', 'category_id', 'user_id'];
 
     public function scopeFilter($query, array $filters){ //$query passed automatically by laravel
 
