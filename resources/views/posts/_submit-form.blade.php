@@ -16,7 +16,7 @@
                 @enderror
             </div>
 
-            <x-primary-button>Post</x-primary-button>
+            <x-form.button>Post</x-form.button>
         </form>
     </x-panel>
 @else
