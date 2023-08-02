@@ -50,4 +50,9 @@ class Post extends Model
     public function author(){ // uses function name to search db column
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    // post path
+    public function path(){
+        return ("/post/{$this->slug}");
+    }
 }
