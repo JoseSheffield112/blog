@@ -1,4 +1,4 @@
-@props(['title'])
+@props(['title' => 'Forgot'])
 
 <!doctype html>
 

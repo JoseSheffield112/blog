@@ -6,7 +6,7 @@
     </h1>
 
     <div class="flex">
-        <aside class="w-48">
+        <aside class="w-48 flex-shrink-0">
             <h3 class="font-semibold mb-4">Links</h3>
             <ul>
                 <li>
@@ -14,6 +14,9 @@
                 </li>
                 <li>
                     <a href="/admin/posts/create" class="{{request()->is('admin/posts/create') ? 'text-blue-500' : ''}}">New Post</a>
+                </li>
+                <li>
+                    <a href="/admin/posts" class="{{request()->is('admin/posts') ? 'text-blue-500' : ''}}">Manage Posts</a>
                 </li>
             </ul>
         </aside>
