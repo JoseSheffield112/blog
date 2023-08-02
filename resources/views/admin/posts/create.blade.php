@@ -5,9 +5,9 @@
             <form method="POST" action="/admin/posts" enctype="multipart/form-data">
                 @csrf
 
-                <x-form.input name="title" required/>
+                <x-form.input name="title"/>
 
-                <x-form.input name="slug" required />
+                <x-form.input name="slug" />
 
                 <x-form.input name="thumbnail" type="file" />
 
