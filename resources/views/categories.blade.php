@@ -1,7 +1,4 @@
-<x-layout>
-    @slot('title')
-        {{ $posts->first()->category->name }}
-    @endslot
+<x-layout title="{{ $posts->first()->category->name }}">
     <h1>{{ $posts->first()->category->name }}</h1>
 
     @foreach($posts as $post)

@@ -1,7 +1,4 @@
-<x-layout>
-    @slot('title')
-        {{ $post->title }}
-    @endslot
+<x-layout title="{{$post->title}}">
 
     <section class="px-6 py-8">
 

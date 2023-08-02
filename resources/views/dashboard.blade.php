@@ -1,7 +1,4 @@
-<x-layout>
-    @slot('title')
-        Dashboard
-    @endslot
+<x-layout title="Dashboard">
 
     <x-setting heading="Dashboard">
         <h3>Currently under work</h3>

@@ -1,7 +1,4 @@
-<x-layout>
-    @slot('title')
-        All posts
-    @endslot
+<x-layout title="All posts">
 
     @include('posts._header')
 

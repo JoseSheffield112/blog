@@ -1,7 +1,4 @@
-<x-layout>
-    @slot('title')
-        Login
-    @endslot
+<x-layout title="Login">
 
     <section class="px-6 py-8">
         <main class="max-w-lg mx-auto mt-10">
