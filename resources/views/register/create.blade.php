@@ -17,10 +17,10 @@
                         </ul>
                     @endif
 
-                    <x-form.input name="Name" type="text" />
-                    <x-form.input name="Username" type="text" />
-                    <x-form.input name="Email" type="email" autocomplete="new-username"/>
-                    <x-form.input name="Password" type="password" autocomplete="new-password"/>
+                    <x-form.input name="Name" type="text" required />
+                    <x-form.input name="Username" type="text" required />
+                    <x-form.input name="Email" type="email" required autocomplete="new-username"/>
+                    <x-form.input name="Password" type="password" required autocomplete="new-password"/>
 
                     <x-form.button>Submit</x-form.button>
                 </form>

@@ -49,4 +49,23 @@ class AdminPostController extends Controller
             'categories' => Category::all()
         ]);
     }
+
+    public function update(Post $post){
+        $attributes = \request()->validate([
+            'title' => 'required',
+            'slug' => ['required', Rule::unique('posts', 'slug')->ignore($post->id)],
+            'thumbnail' => 'image',
+            'excerpt' => 'required',
+            'body' => 'required',
+            'category_id' => ['required', Rule::exists('categories', 'id')]
+        ]);
+
+        if(isset($attributes['thumbnail'])){
+            $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+        }
+
+        $post->update($attributes);
+
+        return back()->with('success', 'Post was successfully updated!');
+    }
 }

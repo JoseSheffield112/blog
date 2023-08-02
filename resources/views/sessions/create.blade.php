@@ -17,8 +17,8 @@
                         </ul>
                     @endif
 
-                    <x-form.input name="email" type="email" auto-complete="current-password" />
-                    <x-form.input name="password" type="password" auto-complete="current-password" />
+                    <x-form.input name="email" type="email" required auto-complete="current-password" />
+                    <x-form.input name="password" type="password" required auto-complete="current-password" />
 
                     <x-form.button>Log in</x-form.button>
                 </form>
