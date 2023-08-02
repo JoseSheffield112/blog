@@ -1,4 +1,4 @@
-<x-layout title="All posts">
+<x-layout>
 
     @include('posts._header')
 
