@@ -30,6 +30,10 @@ use App\Http\Controllers\PostController;
  *
  */
 
+Route::get('/dashboard', function() {
+    return view('dashboard');
+})->middleware('admin');
+
 Route::get('/', [PostController::class, 'index'])->name('home');
 
 // using route model binding to get post
