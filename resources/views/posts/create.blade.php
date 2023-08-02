@@ -3,7 +3,7 @@
         Create Post
     @endslot
 
-    <section class="px-6 py-8">
+    <x-setting heading="Publish a New Post">
         <x-panel class="max-w-sm mx-auto">
             <form method="POST" action="/admin/posts" enctype="multipart/form-data">
                 @csrf
@@ -33,5 +33,6 @@
                 <x-form.button> Publish </x-form.button>
             </form>
         </x-panel>
-    </section>
+    </x-setting>
+
 </x-layout>

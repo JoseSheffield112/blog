@@ -96,5 +96,6 @@
             </div>
         </footer>
     </section>
+
     <x-register-flash/>
 </body>
